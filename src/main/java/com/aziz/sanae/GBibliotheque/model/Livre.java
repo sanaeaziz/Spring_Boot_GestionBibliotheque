@@ -1,4 +1,4 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
 import java.util.List;
 
@@ -18,8 +18,12 @@ public class Livre extends Document {
 	@Column
 	private int nb_page;
 	@OneToMany(mappedBy = "livre", cascade = CascadeType.ALL)
-	@JsonIgnore
 	protected List<Emprunt> emprunts;
+
+	public Livre() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Livre [auteur=" + auteur + ", nb_page=" + nb_page + ", emprunts=" + emprunts + "]";

@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import javax.validation.Valid;
 
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.model.Livre;
-import com.aziz.sanae.repository.DictionnaireRepository;
-import com.aziz.sanae.repository.LivreRepository;
-import com.aziz.sanae.repository.RevueRepository;
-import com.aziz.sanae.service.LivreService;
+import com.aziz.sanae.GBibliotheque.model.Livre;
+import com.aziz.sanae.GBibliotheque.repository.DictionnaireRepository;
+import com.aziz.sanae.GBibliotheque.repository.LivreRepository;
+import com.aziz.sanae.GBibliotheque.repository.RevueRepository;
+import com.aziz.sanae.GBibliotheque.service.LivreService;
 
 
 @Controller
@@ -24,7 +24,7 @@ import com.aziz.sanae.service.LivreService;
 public class LivreConttroller {
 	@Autowired
     private LivreService livreService;
-    //
+
     @Autowired
     LivreRepository livreRepository;
     @Autowired

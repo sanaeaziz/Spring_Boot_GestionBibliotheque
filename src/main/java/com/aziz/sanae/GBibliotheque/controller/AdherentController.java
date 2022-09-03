@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import javax.validation.Valid;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.model.Adherent;
-import com.aziz.sanae.service.AdherentService;
+import com.aziz.sanae.GBibliotheque.model.Adherent;
+import com.aziz.sanae.GBibliotheque.service.AdherentService;
 
 @Controller
 @RequestMapping("/adherent")
@@ -21,7 +21,7 @@ public class AdherentController {
     @Autowired
     private AdherentService adherentService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index(Model modelAndView){
         System.out.println(adherentService.findAllAdherent().size());
         modelAndView.addAttribute("adherents",adherentService.findAllAdherent());

@@ -1,12 +1,12 @@
-package com.aziz.sanae.service;
+package com.aziz.sanae.GBibliotheque.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.aziz.sanae.model.Adherent;
-import com.aziz.sanae.repository.AdherentRepository;
+import com.aziz.sanae.GBibliotheque.model.Adherent;
+import com.aziz.sanae.GBibliotheque.repository.AdherentRepository;
  
 @Service
 public class AdherentService {

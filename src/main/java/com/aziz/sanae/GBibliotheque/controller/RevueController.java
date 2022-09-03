@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import javax.validation.Valid;
 
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.model.Revue;
-import com.aziz.sanae.repository.DictionnaireRepository;
-import com.aziz.sanae.repository.LivreRepository;
-import com.aziz.sanae.repository.RevueRepository;
-import com.aziz.sanae.service.RevueService;
+import com.aziz.sanae.GBibliotheque.model.Revue;
+import com.aziz.sanae.GBibliotheque.repository.DictionnaireRepository;
+import com.aziz.sanae.GBibliotheque.repository.LivreRepository;
+import com.aziz.sanae.GBibliotheque.repository.RevueRepository;
+import com.aziz.sanae.GBibliotheque.service.RevueService;
 
 
 @Controller
@@ -60,6 +60,6 @@ public class RevueController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id){
         revueService.delete(id);
-        return "redirect:/document/livre";
+        return "redirect:/document/revue";
     }
 }

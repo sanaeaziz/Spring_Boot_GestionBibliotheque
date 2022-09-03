@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import javax.validation.Valid;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.model.Dictionnaire;
-import com.aziz.sanae.service.DictionnaireService;
+import com.aziz.sanae.GBibliotheque.model.Dictionnaire;
+import com.aziz.sanae.GBibliotheque.service.DictionnaireService;
 
 
 @Controller
@@ -21,6 +21,7 @@ import com.aziz.sanae.service.DictionnaireService;
 public class DictionnaireController {
     @Autowired
     private DictionnaireService dictionnaireService;
+
     @GetMapping("/add")
     public String add(@ModelAttribute Dictionnaire dictionnaire){
         return "document/AddDictionnaire";
@@ -51,7 +52,7 @@ public class DictionnaireController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable long id){
         dictionnaireService.delete(id);
-        return "redirect:/adherent";
+        return "redirect:/document";
     }
 
 }

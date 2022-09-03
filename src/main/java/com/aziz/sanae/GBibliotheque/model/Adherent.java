@@ -1,4 +1,4 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
 import java.sql.Date;
 import java.util.List;
@@ -10,10 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -35,13 +33,25 @@ public class Adherent {
 	  @Column(name = "cin")
 	  private String cin;
 	  
-	  @DateTimeFormat(pattern = "yyyy-MM-dd")
+	  //@DateTimeFormat(pattern = "yyyy-MM-dd")
 		private Date date_naiss;
 		@OneToMany(mappedBy = "adherent", cascade = CascadeType.ALL)
 		@JsonIgnore
 		private List<Emprunt> emprunts;
 
-	  public Adherent() {
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public List<Emprunt> getEmprunts() {
+		return emprunts;
+	}
+
+	public void setEmprunts(List<Emprunt> emprunts) {
+		this.emprunts = emprunts;
+	}
+
+	public Adherent() {
 
 	  }
 

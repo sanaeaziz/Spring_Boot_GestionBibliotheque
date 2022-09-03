@@ -1,6 +1,5 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

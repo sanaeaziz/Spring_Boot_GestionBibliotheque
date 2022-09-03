@@ -1,13 +1,10 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -19,7 +16,7 @@ public class Dictionnaire extends Document {
 	@Column()
 	private String langue;
 	@OneToMany(mappedBy = "dictionnaire", cascade = CascadeType.ALL)
-	@JsonIgnore
+
 	private List<Emprunt> emprunts;
 	
 	public Dictionnaire( double prix,String langue) {
@@ -39,5 +36,11 @@ public class Dictionnaire extends Document {
 		this.langue = langue;
 	}
 
+	public List<Emprunt> getEmprunts() {
+		return emprunts;
+	}
 
+	public void setEmprunts(List<Emprunt> emprunts) {
+		this.emprunts = emprunts;
+	}
 }

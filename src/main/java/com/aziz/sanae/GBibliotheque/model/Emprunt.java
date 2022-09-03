@@ -1,20 +1,15 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
-
 
 @Entity
-
 public class Emprunt {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,23 +17,28 @@ public class Emprunt {
 	private Date date_emprunt;
 	private Date date_retour;
 
-	@ManyToOne()
-	@JoinColumn(name = "dic_id",insertable = false,updatable = false)
+	@ManyToOne( optional = false)
+	@JoinColumn(name = "dic_id")
 	private Dictionnaire dictionnaire;
-	@ManyToOne()
-	@JoinColumn(name = "livre_id",insertable = false,updatable = false)
+	@ManyToOne( optional = false)
+	@JoinColumn(name = "livre_id")
 	private Livre livre;
-	@ManyToOne()
-	@JoinColumn(name = "revue_id",insertable = false,updatable = false)
+	@ManyToOne( optional = false)
+	@JoinColumn(name = "revue_id")
 	private Revue revue;
-	@ManyToOne()
+	@ManyToOne( optional = false)
 	@JoinColumn(nullable = false,name = "adherent_id")
 	private Adherent adherent;
+
+	public Emprunt() {
+
+	}
+
 	public long getId() {
 		return id;
 		
 	}
-	
+
 	public Emprunt(long id, Date date_emprunt, Date date_retour, Dictionnaire dictionnaire, Livre livre, Revue revue,
 			Adherent adherent) {
 		super();

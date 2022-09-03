@@ -156,12 +156,12 @@
                            id="birthday"
                            aria-describedby="birthday"
                            placeholder="Date Naissance"
-                           name="date_naissance"
-                           th:field=*{date_naissance}
+                           name="date_naiss"
+                           th:field=*{date_naiss}
                     >
-                    <p th:if="${#fields.hasErrors('date_naissance')}"
+                    <p th:if="${#fields.hasErrors('date_naiss')}"
                        th:errorClass="error"
-                       th:errors="*{date_naissance}"
+                       th:errors="*{date_naiss}"
                        class="mt-2 text-sm text-red-600 dark:text-red-500">
                     </p>
                 </div>

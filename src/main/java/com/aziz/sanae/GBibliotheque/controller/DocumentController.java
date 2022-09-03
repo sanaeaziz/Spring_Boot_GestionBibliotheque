@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,10 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.repository.DictionnaireRepository;
-import com.aziz.sanae.repository.LivreRepository;
-import com.aziz.sanae.repository.RevueRepository;
-import com.aziz.sanae.service.DictionnaireService;
+import com.aziz.sanae.GBibliotheque.repository.DictionnaireRepository;
+import com.aziz.sanae.GBibliotheque.repository.LivreRepository;
+import com.aziz.sanae.GBibliotheque.repository.RevueRepository;
+import com.aziz.sanae.GBibliotheque.service.DictionnaireService;
 
 
 @Controller

@@ -1,4 +1,4 @@
-package com.aziz.sanae.controller;
+package com.aziz.sanae.GBibliotheque.controller;
 
 import javax.validation.Valid;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aziz.sanae.model.Emprunt;
-import com.aziz.sanae.service.AdherentService;
-import com.aziz.sanae.service.DictionnaireService;
-import com.aziz.sanae.service.EmpruntService;
-import com.aziz.sanae.service.LivreService;
-import com.aziz.sanae.service.RevueService;
+import com.aziz.sanae.GBibliotheque.model.Emprunt;
+import com.aziz.sanae.GBibliotheque.service.AdherentService;
+import com.aziz.sanae.GBibliotheque.service.DictionnaireService;
+import com.aziz.sanae.GBibliotheque.service.EmpruntService;
+import com.aziz.sanae.GBibliotheque.service.LivreService;
+import com.aziz.sanae.GBibliotheque.service.RevueService;
 
 @Controller
 @RequestMapping("/emprunt")
@@ -46,10 +46,9 @@ public class EmpruntController {
         return "emprunt/add";
     }
     @PostMapping("/add")
-    public String save(@Valid @ModelAttribute Emprunt emprunt, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return "emprunt/add";
-        }
+    public String save(@ModelAttribute Emprunt emprunt){
+
+
         empruntService.save(emprunt);
         return "redirect:/emprunt";
     }

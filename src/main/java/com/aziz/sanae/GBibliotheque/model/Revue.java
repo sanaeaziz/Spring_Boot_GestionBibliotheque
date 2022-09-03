@@ -1,4 +1,4 @@
-package com.aziz.sanae.model;
+package com.aziz.sanae.GBibliotheque.model;
 
 import java.sql.Date;
 import java.util.List;
@@ -19,14 +19,18 @@ public class Revue extends Document {
 	private String ref;
 	@Column()
 	private Date annee_pub;
-	@OneToMany(mappedBy = "revue", cascade = CascadeType.ALL,orphanRemoval = true)
-	@JsonIgnore
+	@OneToMany(mappedBy = "revue", cascade = CascadeType.ALL)
 	protected List<Emprunt> emprunts;
+
+	public Revue() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Revue [ref=" + ref + ", annee_pub=" + annee_pub + ", emprunts=" + emprunts + "]";
 	}
-	public Revue(double prix, String ref, Date annee_pub, List<com.aziz.sanae.model.Emprunt> emprunts) {
+	public Revue(double prix, String ref, Date annee_pub, List<com.aziz.sanae.GBibliotheque.model.Emprunt> emprunts) {
 		super(prix);
 		this.ref = ref;
 		this.annee_pub = annee_pub;
